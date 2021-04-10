@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-10T14:00:53.423Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="8mNDxLsb8-04Ad_hnJQp" version="14.5.10" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-10T14:01:33.060Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="SkejSdVcs9mrcuVZwvgh" version="14.5.10" type="github">
   <diagram id="3crj-N6eCKjugvdwFmlM" name="Page-1">
-    <mxGraphModel dx="2036" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2544" dy="1136" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -49,14 +49,14 @@
         <mxCell id="ORVzDimxOUe0flfOR2wj-43" value="&lt;h1&gt;&lt;span style=&quot;font-size: 17px ; font-weight: normal&quot;&gt;Social link&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;font-size: 17px ; font-weight: normal&quot;&gt;Dove siamo (mappa google col pin &quot;&lt;/span&gt;&lt;/div&gt;&lt;a class=&quot;DbQRg&quot; target=&quot;_blank&quot; href=&quot;http://maps.google.com/maps?q=35.128061%2C-106.535561&amp;amp;ll=35.128061%2C-106.535561&amp;amp;z=17&amp;amp;authuser=3&quot; style=&quot;color: rgb(51 , 103 , 214) ; font-size: 13px ; font-family: &amp;#34;roboto&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; background-color: rgb(255 , 255 , 255)&quot;&gt;http://maps.google.com/maps?q=35.128061,-106.535561&amp;amp;ll=35.128061,-106.535561&amp;amp;z=17&lt;/a&gt;&lt;div&gt;&lt;span style=&quot;font-size: 17px ; font-weight: normal&quot;&gt;&quot;)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=17;fontColor=#949494;align=left;" vertex="1" parent="ORVzDimxOUe0flfOR2wj-2">
           <mxGeometry x="50" y="930" width="430" height="200" as="geometry" />
         </mxCell>
+        <mxCell id="ORVzDimxOUe0flfOR2wj-34" value="CAROSELLO IMMAGINI (FIGA)&lt;br&gt;Cliccabili (dinamicamente)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontColor=#949494;" vertex="1" parent="ORVzDimxOUe0flfOR2wj-2">
+          <mxGeometry x="60" y="190" width="280" height="120" as="geometry" />
+        </mxCell>
         <mxCell id="ORVzDimxOUe0flfOR2wj-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fontSize=17;fontColor=#949494;" edge="1" parent="1" source="ORVzDimxOUe0flfOR2wj-33" target="ORVzDimxOUe0flfOR2wj-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ORVzDimxOUe0flfOR2wj-33" value="HEADER" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontColor=#949494;" vertex="1" parent="1">
           <mxGeometry x="580" y="220" width="40" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="ORVzDimxOUe0flfOR2wj-34" value="CAROSELLO IMMAGINI (FIGA)&lt;br&gt;Cliccabili (dinamicamente)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontColor=#949494;" vertex="1" parent="1">
-          <mxGeometry x="110" y="260" width="280" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
