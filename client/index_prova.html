@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script> 
+        var myCarousel = document.getElementById('caroselloEventi');
+        var eventEmbed = document.getElementById('embedEvent');
+        myCarousel.addEventListener('slide.bs.carousel', function () {
+            eventEmbed.src = "/client/assets/img/texts/Evento_2";
+        })
+    </script>
+    <style>.carousel  { width:100%; height:100%; } </style>
+    <title>HomePageProject</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">#AdessoBasta</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <div class="container">
+      <div class="row">
+        <h3>#AdessoBasta</h3>
+      </div>
+      <table style="width: 100%;">
+        <th style="width: 75%;">
+            <div id="caroselloEventi" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/client/assets/img/images/Evento_1.jpg" class="d-block w-100" alt="Primo evento" data-src="/client/assets/img/texts/Evento_1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/client/assets/img/images/Evento_2.jpg" class="d-block w-100" alt="Secondo evento" data-src="/client/assets/img/texts/Evento_2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/client/assets/img/images/Evento_3.jpg" class="d-block w-100" alt="Terzo evento" data-src="/client/assets/img/texts/Evento_3">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#caroselloEventi" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#caroselloEventi" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>              
+        </th>
+        <th style="vertical-align: top;">
+            <embed id="embedEvent" src="assets/img/texts/Evento_1.txt">
+        </th>
+        
+      </table>
+
+    </div>
+  </body>
+</html>
