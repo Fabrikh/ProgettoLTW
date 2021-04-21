@@ -8,10 +8,12 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script> 
       function onSlide(event) {
+        //Eseguito uno slide modifico il campo src clonando il precedente in modo che venga ricaricato
         var eventEmbed = document.getElementById('embedEvent');
+        var Clone = eventEmbed.cloneNode();
         var newSrc = event.relatedTarget.id;
-        eventEmbed.setAttribute('src', newSrc);
-        alert(newSrc + " " + eventEmbed.src);
+        Clone.setAttribute('src', newSrc);
+        eventEmbed.parentNode.replaceChild(Clone,eventEmbed);
       }
       function EventHandlerCarousel(){
         var myCarousel = document.getElementById('caroselloEventi');
@@ -77,13 +79,13 @@
         <th style="width: 75%;">
             <div id="caroselloEventi" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                <div class="carousel-item active" id="/client/assets/img/texts/Evento_1">
+                <div class="carousel-item active" id="/client/assets/img/texts/Evento_1.txt">
                     <img src="assets/img/images/Evento_1.jpg" class="d-block w-100" alt="Primo evento">
                 </div>
-                <div class="carousel-item" id="/client/assets/img/texts/Evento_2"> 
+                <div class="carousel-item" id="/client/assets/img/texts/Evento_2.txt"> 
                     <img src="assets/img/images/Evento_2.jpg" class="d-block w-100" alt="Secondo evento">
                 </div>
-                <div class="carousel-item" id="/client/assets/img/texts/Evento_3">
+                <div class="carousel-item" id="/client/assets/img/texts/Evento_3.txt">
                     <img src="assets/img/images/Evento_3.jpg" class="d-block w-100" alt="Terzo evento">
                 </div>
                 </div>
