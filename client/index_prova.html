@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
     <script> 
       function onSlide(event) {
         //Eseguito uno slide modifico il campo src clonando il precedente in modo che venga ricaricato
@@ -119,16 +120,10 @@
       <table style="width: 100%;">
         <th style="width: 75%">
             <div id="caroselloEventi" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active" id="/client/assets/img/texts/Evento_1.txt">
-                    <img src="assets/img/images/Evento_1.jpg" alt="Primo evento">
-                </div>
-                <div class="carousel-item" id="/client/assets/img/texts/Evento_2.txt"> 
-                    <img src="assets/img/images/Evento_2.jpg" alt="Secondo evento">
-                </div>
-                <div class="carousel-item" id="/client/assets/img/texts/Evento_3.txt">
-                    <img src="assets/img/images/Evento_3.jpg" alt="Terzo evento">
-                </div>
+                <div class="carousel-inner" id="innercar">
+                  <div v-for="x in carousel" v-bind:class = "x.class" v-bind:id = "x.id" v-bind:key = "x.alt">
+                    <img v-bind:src="x.src" v-bind:alt = "x.alt">
+                  </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#caroselloEventi" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -182,5 +177,6 @@
         </table>
       </div>
     </div>
+    <script type="text/javascript" src = "carousel.js"></script>
   </body>
 </html>
