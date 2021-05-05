@@ -20,10 +20,50 @@
         myCarousel.addEventListener('slid.bs.carousel', onSlide);      
       }
     </script>
-    <style>.carousel  { width:100%; height:100%; } </style>
+    <style>
+      .carousel { 
+        width:100%; 
+        height:100%; 
+      } 
+      
+      img{
+        width: 100%;
+        height: auto;
+      }
+      #TornaSu {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: red; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+      }
+
+      #TornaSu:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+      }
+
+      #linkBox td {
+        width: 25%;
+        padding-left: 10%;
+      }
+
+      #linkBox th {
+        width: 25%;
+        padding-left: 10%;
+        padding-top: 5%;
+      }
+    </style>
     <title>HomePageProject</title>
   </head>
-  <body onload="EventHandlerCarousel();">
+  <body onload="EventHandlerCarousel();" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <button
@@ -71,22 +111,23 @@
       </div>
     </nav>
     <br />
+    <a href="#" class="scrollup" style="display: block;" id="TornaSu">Torna su</a>
     <div class="container">
       <div class="row">
         <h3>#AdessoBasta</h3>
       </div>
       <table style="width: 100%;">
-        <th style="width: 75%;">
+        <th style="width: 75%">
             <div id="caroselloEventi" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                 <div class="carousel-item active" id="/client/assets/img/texts/Evento_1.txt">
-                    <img src="assets/img/images/Evento_1.jpg" class="d-block w-100" alt="Primo evento">
+                    <img src="assets/img/images/Evento_1.jpg" alt="Primo evento">
                 </div>
                 <div class="carousel-item" id="/client/assets/img/texts/Evento_2.txt"> 
-                    <img src="assets/img/images/Evento_2.jpg" class="d-block w-100" alt="Secondo evento">
+                    <img src="assets/img/images/Evento_2.jpg" alt="Secondo evento">
                 </div>
                 <div class="carousel-item" id="/client/assets/img/texts/Evento_3.txt">
-                    <img src="assets/img/images/Evento_3.jpg" class="d-block w-100" alt="Terzo evento">
+                    <img src="assets/img/images/Evento_3.jpg" alt="Terzo evento">
                 </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#caroselloEventi" data-bs-slide="prev">
@@ -104,7 +145,42 @@
         </th>
         
       </table>
+      <pre>
 
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+      </pre>
+      <div id="linkBox" style="width:100%; background-color:blue; color:aqua;">
+        <table id="box" >
+          <tr>
+            <th>I nostri social</th>
+            <th>Contattaci</th>
+          </tr>
+          <tr>
+            <td>Link IG</td>
+            <td>Email</td>
+          </tr>
+          <tr>
+            <td>Link Twitter</td>
+            <td>Telefono</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </body>
 </html>
