@@ -51,5 +51,22 @@ img {
 }
 
 #navbarTogglerDemo03 {
-  margin-left: 33%
+  margin-left: 33%;
 }
+
+li {
+  padding: 12px, 14px 24px, 12px;
+}
+
+li a:hover {
+  color: #ec6c00 !important;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+.gray-bg {
+  background-color: #ebf4fa;
+}
+
