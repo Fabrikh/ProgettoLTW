@@ -24,6 +24,15 @@
   height: auto;
 }
 
+#linkBox {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: 0;
+  background-color: blue;
+  color: aqua;
+}
+
 #linkBox td {
   width: 25%;
   padding-left: 10%;
