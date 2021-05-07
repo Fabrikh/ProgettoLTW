@@ -65,15 +65,15 @@
       </div>
     </nav>
     <br />
-    <a href="#" class="scrollup" style="display: block" id="TornaSu"
-      >Torna su</a
-    >
+    <a href="#" class="scrollup" id="TornaSu">
+      <img id = 'scrollArrow' src ='assets\img\images\images.png'/>
+    </a>
     <div class="container">
       <div class="row">
         <h3>#AdessoBasta</h3>
       </div>
-      <table style="width: 100%">
-        <th style="width: 75%">
+      <table style="width: 100%; max-height: 20%;">
+        <th style="width: 75%;">
           <div
             id="caroselloEventi"
             class="carousel slide"
@@ -86,7 +86,7 @@
                 v-bind:id="x.id"
                 v-bind:key="x.alt"
               >
-                <img v-bind:src="x.src" v-bind:alt="x.alt" />
+                <img id="imgCarousel" v-bind:src="x.src" v-bind:alt="x.alt" />
               </div>
             </div>
             <button
@@ -382,11 +382,8 @@
       <!-- Section: Magazine v.2 -->
       <!-- END NEWS SECTION-->
       <pre></pre>
-      <div
-        id="linkBox"
-        style="width: 100%; background-color: blue; color: aqua"
-      >
-        <table id="box">
+      <div id="linkBox">
+        <table>
           <tr>
             <th>I nostri social</th>
             <th>Contattaci</th>
