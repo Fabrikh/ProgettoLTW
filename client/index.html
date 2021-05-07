@@ -4,68 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
-    <script> 
+    <script>
       function onSlide(event) {
         //Eseguito uno slide modifico il campo src clonando il precedente in modo che venga ricaricato
-        var eventEmbed = document.getElementById('embedEvent');
+        var eventEmbed = document.getElementById("embedEvent");
         var Clone = eventEmbed.cloneNode();
         var newSrc = event.relatedTarget.id;
-        Clone.setAttribute('src', newSrc);
-        eventEmbed.parentNode.replaceChild(Clone,eventEmbed);
+        Clone.setAttribute("src", newSrc);
+        eventEmbed.parentNode.replaceChild(Clone, eventEmbed);
       }
-      function EventHandlerCarousel(){
-        var myCarousel = document.getElementById('caroselloEventi');
-        myCarousel.addEventListener('slid.bs.carousel', onSlide);      
+      function EventHandlerCarousel() {
+        var myCarousel = document.getElementById("caroselloEventi");
+        myCarousel.addEventListener("slid.bs.carousel", onSlide);
       }
     </script>
-    <style>
-      .carousel { 
-        width:100%; 
-        height:100%; 
-      } 
-      
-      img{
-        width: 100%;
-        height: auto;
-      }
-      #TornaSu {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 20px; /* Place the button at the bottom of the page */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap */
-        border: none; /* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: red; /* Set a background color */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
-      }
-
-      #TornaSu:hover {
-        background-color: #555; /* Add a dark-grey background on hover */
-      }
-
-      #linkBox td {
-        width: 25%;
-        padding-left: 10%;
-      }
-
-      #linkBox th {
-        width: 25%;
-        padding-left: 10%;
-        padding-top: 5%;
-      }
-    </style>
     <title>HomePageProject</title>
   </head>
-  <body onload="EventHandlerCarousel();" >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body onload="EventHandlerCarousel();">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded"
+    >
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -85,83 +47,84 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">News</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
+              <a class="nav-link" href="#">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
             </li>
           </ul>
           <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+            <button id="signin-btn" class="btn btn-outline-success">
+              Sign in
             </button>
           </form>
         </div>
       </div>
     </nav>
     <br />
-    <a href="#" class="scrollup" style="display: block;" id="TornaSu">Torna su</a>
+    <a href="#" class="scrollup" style="display: block" id="TornaSu"
+      >Torna su</a
+    >
     <div class="container">
       <div class="row">
         <h3>#AdessoBasta</h3>
       </div>
-      <table style="width: 100%;">
+      <table style="width: 100%">
         <th style="width: 75%">
-            <div id="caroselloEventi" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" id="innercar">
-                  <div v-for="x in carousel" v-bind:class = "x.class" v-bind:id = "x.id" v-bind:key = "x.alt">
-                    <img v-bind:src="x.src" v-bind:alt = "x.alt">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#caroselloEventi" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#caroselloEventi" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </button>
-            </div>              
+          <div
+            id="caroselloEventi"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner" id="innercar">
+              <div
+                v-for="x in carousel"
+                v-bind:class="x.class"
+                v-bind:id="x.id"
+                v-bind:key="x.alt"
+              >
+                <img v-bind:src="x.src" v-bind:alt="x.alt" />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#caroselloEventi"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#caroselloEventi"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </th>
-        <th style="vertical-align: top;">
-            <embed id="embedEvent" src="assets/img/texts/Evento_1.txt">
+        <th style="vertical-align: top">
+          <embed id="embedEvent" src="assets/img/texts/Evento_1.txt" />
         </th>
-        
       </table>
-      <pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-      </pre>
-      <div id="linkBox" style="width:100%; background-color:blue; color:aqua;">
-        <table id="box" >
+      <pre></pre>
+      <div
+        id="linkBox"
+        style="width: 100%; background-color: blue; color: aqua"
+      >
+        <table id="box">
           <tr>
             <th>I nostri social</th>
             <th>Contattaci</th>
@@ -177,6 +140,6 @@
         </table>
       </div>
     </div>
-    <script type="text/javascript" src = "carousel.js"></script>
+    <script type="text/javascript" src="carousel.js"></script>
   </body>
 </html>
