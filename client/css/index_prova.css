@@ -41,6 +41,7 @@ body{
   
   #linkBox {
     position: absolute;
+    padding-bottom: 2.5%;
     width: 100%;
     right: 0;
     left: 0;
