@@ -4,68 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index_prova.css" />
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
-    <script> 
-      function onSlide(event) {
-        //Eseguito uno slide modifico il campo src clonando il precedente in modo che venga ricaricato
-        var eventEmbed = document.getElementById('embedEvent');
-        var Clone = eventEmbed.cloneNode();
-        var newSrc = event.relatedTarget.id;
-        Clone.setAttribute('src', newSrc);
-        eventEmbed.parentNode.replaceChild(Clone,eventEmbed);
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentDocument.documentElement.scrollHeight + 'px';
       }
-      function EventHandlerCarousel(){
-        var myCarousel = document.getElementById('caroselloEventi');
-        myCarousel.addEventListener('slid.bs.carousel', onSlide);      
+      function onSlide(event) {
+        var eventIframe = document.getElementById("iframeWrap");
+        var newSrc = event.relatedTarget.id;
+        eventIframe.innerHTML = "<iframe id='iframeEvent' src=" + newSrc + " onload='resizeIframe(this)'></iframe>";    
+      }
+      function EventHandlerCarousel() {
+        var myCarousel = document.getElementById("caroselloEventi");
+        myCarousel.addEventListener("slid.bs.carousel", onSlide);
       }
     </script>
-    <style>
-      .carousel { 
-        width:100%; 
-        height:100%; 
-      } 
-      
-      img{
-        width: 100%;
-        height: auto;
-      }
-      #TornaSu {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 20px; /* Place the button at the bottom of the page */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap */
-        border: none; /* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: red; /* Set a background color */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
-      }
-
-      #TornaSu:hover {
-        background-color: #555; /* Add a dark-grey background on hover */
-      }
-
-      #linkBox td {
-        width: 25%;
-        padding-left: 10%;
-      }
-
-      #linkBox th {
-        width: 25%;
-        padding-left: 10%;
-        padding-top: 5%;
-      }
-    </style>
     <title>HomePageProject</title>
   </head>
-  <body onload="EventHandlerCarousel();" >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body onload="EventHandlerCarousel();">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded"
+    >
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -82,86 +44,332 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">News</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
+              <a class="nav-link" href="#">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
             </li>
           </ul>
           <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+            <button id="signin-btn" class="btn btn-outline-success">
+              Sign in
             </button>
           </form>
         </div>
       </div>
     </nav>
     <br />
-    <a href="#" class="scrollup" style="display: block;" id="TornaSu">Torna su</a>
+    <a href="#" class="scrollup" id="TornaSu">
+      <img id = 'scrollArrow' src ='assets\img\images\images.png'/>
+    </a>
     <div class="container">
       <div class="row">
         <h3>#AdessoBasta</h3>
       </div>
-      <table style="width: 100%;">
-        <th style="width: 75%">
-            <div id="caroselloEventi" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" id="innercar">
-                  <div v-for="x in carousel" v-bind:class = "x.class" v-bind:id = "x.id" v-bind:key = "x.alt">
-                    <img v-bind:src="x.src" v-bind:alt = "x.alt">
+      <section id = "carousel-section">
+          <div
+            id="caroselloEventi"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner" id="innercar">
+              <div
+                v-for="x in carousel"
+                v-bind:class="x.class"
+                v-bind:id="x.id"
+                v-bind:key="x.alt"
+              >
+                <img id="imgCarousel" v-bind:src="x.src" v-bind:alt="x.alt" />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#caroselloEventi"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#caroselloEventi"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <div id="iframeWrap">
+          <iframe id="iframeEvent" src="assets/img/texts/Evento_1.html" onload="resizeIframe(this)"></iframe>
+        </div>
+      </section>
+      <!-- NEWS SECTION-->
+      <!-- Section: Magazine v.2 -->
+      <section class="magazine-section my-5">
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold text-center my-5">
+          Section title
+        </h2>
+        <!-- Section description -->
+        <p class="text-center dark-grey-text w-responsive mx-auto mb-5">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit id laborum.
+        </p>
+
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-lg-6 col-md-12">
+            <!-- Featured news -->
+            <div
+              class="single-news mb-lg-0 mb-4"
+              style="padding: 12px 14px 16px 12px"
+            >
+              <!-- Image -->
+              <div class="view overlay rounded z-depth-1-half mb-4">
+                <img
+                  class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                  style="height: 100%; width: 100%"
+                  src="./assets/img/images/sample-img.jpg"
+                  alt="Sample image"
+                />
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!-- Data -->
+              <div class="news-data d-flex justify-content-between">
+                <a href="#!" class="deep-orange-text">
+                  <h6 class="font-weight-bold">
+                    <i class="fas fa-utensils pr-2"></i>NEPO2k20
+                  </h6>
+                </a>
+                <p class="font-weight-bold dark-grey-text">
+                  <i class="fas fa-clock-o pr-2"></i>27/02/2021
+                </p>
+              </div>
+
+              <!-- Excerpt -->
+              <h3 class="font-weight-bold dark-grey-text mb-3">
+                <a>Title of the news</a>
+              </h3>
+              <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
+                Sed ut perspiciatis unde voluptatem omnis iste natus error sit
+                voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                beatae vitae explicabo. Duis aute irure dolor in reprehenderit
+                in voluptate velit esse cillum dolore eu fugiat.
+              </p>
+            </div>
+            <!-- Featured news -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-6 col-md-12">
+            <!-- Small news -->
+            <div class="single-news mb-4">
+              <!-- Grid row -->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3">
+                  <!--Image-->
+                  <div class="view overlay rounded z-depth-1 mb-4">
+                    <img
+                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                      src="./assets/img/images/Bitmap.png"
+                      alt="Sample image"
+                    />
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#caroselloEventi" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#caroselloEventi" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </button>
-            </div>              
-        </th>
-        <th style="vertical-align: top;">
-            <embed id="embedEvent" src="assets/img/texts/Evento_1.txt">
-        </th>
-        
-      </table>
-      <pre>
+                <!-- Grid column -->
 
+                <!-- Grid column -->
+                <div class="col-md-9">
+                  <!-- Excerpt -->
+                  <span
+                    class="badge rounded-pill bg-danger"
+                    style="background-color: #ec6c00 !important"
+                    >25/02/2021</span
+                  >
+                  <div class="d-flex justify-content-between">
+                    <div class="col-11 text-truncate pl-0 mb-3">
+                      <br />
+                      <a href="#!" class="dark-grey-text"
+                        >At vero eos et accusamus et iusto odio dignissimos
+                        ducimus qui blanditiis</a
+                      >
+                    </div>
+                    <a><i class="fas fa-angle-double-right"></i></a>
+                  </div>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+            <!-- Small news -->
 
+            <!-- Small news -->
+            <div class="single-news mb-4">
+              <!-- Grid row -->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3">
+                  <!--Image-->
+                  <div class="view overlay rounded z-depth-1 mb-4">
+                    <img
+                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                      src="./assets/img/images/Bitmap.png"
+                      alt="Sample image"
+                    />
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Grid column -->
 
+                <!-- Grid column -->
+                <div class="col-md-9">
+                  <!-- Excerpt -->
+                  <span
+                    class="badge rounded-pill bg-danger"
+                    style="background-color: #ec6c00 !important"
+                    >25/02/2021</span
+                  >
+                  <div class="d-flex justify-content-between">
+                    <div class="col-11 text-truncate pl-0 mb-3">
+                      <br />
+                      <a href="#!" class="dark-grey-text"
+                        >Itaque earum rerum hic tenetur a sapiente delectus</a
+                      >
+                    </div>
+                    <a><i class="fas fa-angle-double-right"></i></a>
+                  </div>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+            <!-- Small news -->
 
+            <!-- Small news -->
+            <div class="single-news mb-4">
+              <!-- Grid row -->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3">
+                  <!--Image-->
+                  <div class="view overlay rounded z-depth-1 mb-4">
+                    <img
+                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                      src="./assets/img/images/Bitmap.png"
+                      alt="Sample image"
+                    />
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Grid column -->
 
+                <!-- Grid column -->
+                <div class="col-md-9">
+                  <!-- Excerpt -->
+                  <span
+                    class="badge rounded-pill bg-danger"
+                    style="background-color: #ec6c00 !important"
+                    >25/02/2021</span
+                  >
+                  <div class="d-flex justify-content-between">
+                    <div class="col-11 text-truncate pl-0 mb-3">
+                      <br />
+                      <a href="#!" class="dark-grey-text"
+                        >Soluta nobis est eligendi optio cumque nihil impedit
+                        quo minus</a
+                      >
+                    </div>
+                    <a><i class="fas fa-angle-double-right"></i></a>
+                  </div>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+            <!-- Small news -->
 
+            <!-- Small news -->
+            <div class="single-news">
+              <!-- Grid row -->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3">
+                  <!--Image-->
+                  <div class="view overlay rounded z-depth-1 mb-md-0 mb-4">
+                    <img
+                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                      src="./assets/img/images/Bitmap.png"
+                      alt="Sample image"
+                    />
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Grid column -->
 
-
-
-
-
-
-
-        
-
-
-
-
-      </pre>
-      <div id="linkBox" style="width:100%; background-color:blue; color:aqua;">
-        <table id="box" >
+                <!-- Grid column -->
+                <div class="col-md-9">
+                  <!-- Excerpt -->
+                  <span
+                    class="badge rounded-pill bg-danger"
+                    style="background-color: #ec6c00 !important"
+                    >25/02/2021</span
+                  >
+                  <div class="d-flex justify-content-between">
+                    <div class="col-11 text-truncate pl-0 mb-lg-3">
+                      <br />
+                      <a href="#!" class="dark-grey-text"
+                        >Duis aute irure dolor in reprehenderit in voluptate</a
+                      >
+                    </div>
+                    <a><i class="fas fa-angle-double-right"></i></a>
+                  </div>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+            <!-- Small news -->
+          </div>
+          <!--Grid column-->
+        </div>
+        <!-- Grid row -->
+      </section>
+      <!-- Section: Magazine v.2 -->
+      <!-- END NEWS SECTION-->
+      <pre></pre>
+      <div id="linkBox">
+        <table>
           <tr>
             <th>I nostri social</th>
             <th>Contattaci</th>
@@ -177,6 +385,6 @@
         </table>
       </div>
     </div>
-    <script type="text/javascript" src = "carousel.js"></script>
+    <script type="text/javascript" src="carousel.js"></script>
   </body>
 </html>

@@ -1,0 +1,94 @@
+body{
+    overflow-x: hidden;
+  }
+  
+  #carousel-section {
+    width: 100vw;
+    margin-left: -7.5vw;
+  }
+  
+  #imgCarousel {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  #iframeWrap {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 1.5%;
+    overflow: hidden;
+  }
+  
+  #iframeEvent {
+    width: 100%;
+  }
+  
+  #TornaSu {
+    display: inline;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px;
+    right: 0px;
+    z-index: 99;
+    cursor: pointer; /* Add a mouse pointer on hover */
+    transform: translateX(65%);
+  }
+  
+  #scrollArrow {
+    width: 17.5%;
+    height: auto;
+  }
+  
+  #linkBox {
+    position: absolute;
+    padding-bottom: 2.5%;
+    width: 100%;
+    right: 0;
+    left: 0;
+    background-color: blue;
+    color: aqua;
+  }
+  
+  #linkBox td {
+    width: 25%;
+    padding-left: 10%;
+  }
+  
+  #linkBox th {
+    width: 25%;
+    padding-left: 10%;
+    padding-top: 5%;
+  }
+  
+  #signin-btn {
+    border-color: #ec6c00;
+    color: #ec6c00;
+    width: 140px;
+  }
+  
+  #signin-btn:hover {
+    background-color: #ec6c00;
+    color: whitesmoke;
+  }
+  
+  #navbarTogglerDemo03 {
+    margin-left: 33%;
+  }
+  
+  li {
+    padding: 12px, 14px 24px, 12px;
+  }
+  
+  li a:hover {
+    color: #ec6c00 !important;
+  }
+  
+  .section {
+    padding: 100px 0;
+    position: relative;
+  }
+  .gray-bg {
+    background-color: #ebf4fa;
+  }
+  
+  
