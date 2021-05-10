@@ -20,8 +20,50 @@
       function Load() {
         var myCarousel = document.getElementById("caroselloEventi");
         myCarousel.addEventListener("slid.bs.carousel", onSlide);
-        //Analizzare URL per nome e problemi avvenuti...
-        //...
+        var url_str = window.location.href;
+        var url = new URL(url_str);
+        if(url.searchParams.has("name")){
+          var name = url.searchParams.get("name");
+          //Aggiornare pulsante sign in
+          return;
+        }        
+        if(url.searchParams.has("prob")){
+          var prob = url.searchParams.get("prob");
+          switch(expression) {
+            case 1:
+              alert("Nome utente già in uso");
+              break;
+            case 2:
+              alert("Email già in uso");
+              break;
+            case 3:
+              alert("Problema non riconosciuto");
+              break;
+            case 4:
+              alert("Nome utente non esistente");
+              break;
+            case 5:
+              alert("Password errata");
+              break;
+            default:
+              alert("Problema non riconosciuto");
+          }
+          return;
+        }       
+        /*
+        if (window.location.toString().includes("prob")) {
+          const params = new URLSearchParams(document.location.search);
+          const prob = params.get("prob");
+          alert("Daje" + prob);
+          return;
+        }
+        if (window.location.href.indexOf("name") != -1) {
+          const params = new URLSearchParams(document.location.search);
+          const nome = params.get("name");
+          alert("Daje" + nome);
+          return;
+        }
+*/
       }
     </script>
     <title>HomePageProject</title>

@@ -12,7 +12,7 @@
                 $q1 = "SELECT * FROM utenti WHERE username= $1";
                 $result = pg_query_params($dbconnect, $q1, array($loginUser));
                 if(!($line = pg_fetch_array($result, null, PGSQL_ASSOC))) {
-                    header("Location: index.html?prob=5"); //Not registered
+                    header("Location: index.html?prob=4"); //Not registered
                     exit;
                 }
                 else{
@@ -20,7 +20,7 @@
                     $q2 = "SELECT * FROM utenti WHERE username = $1 AND usrpassword = $2";
                     $result = pg_query_params($dbconnect, $q2, array($loginUser, $loginPassword));
                     if(!($line = pg_fetch_array($result, null, PGSQL_ASSOC))) {
-                        header("Location: index.html?prob=6"); //Wrong password
+                        header("Location: index.html?prob=5"); //Wrong password
                         exit;
                     }
                     else{
