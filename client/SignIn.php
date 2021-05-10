@@ -28,8 +28,9 @@
                         $q3 = "INSERT INTO utenti VALUES ($1, $2, $3)";
                         $data = pg_query_params($dbconnect, $q3, array($loginUser, $loginEmail, $loginPassword));
                         if($data) {
-                            header("Location: index.html?name=$loginUser");
-                            exit;   
+                            setcookie("Username", $loginUser, time() + 365*24*60*60, "/"); //Expiration after one year
+                            header("Location: index.html");
+                            exit;
                         }
                     }
                 }

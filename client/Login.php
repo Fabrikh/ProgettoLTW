@@ -24,7 +24,8 @@
                         exit;
                     }
                     else{
-                        header("Location: index.html?name=$loginUser");
+                        setcookie("Username", $loginUser, time() + 365*24*60*60, "/"); //Expiration after one year
+                        header("Location: index.html");
                         exit;                        
                     }
                 }

@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
     <script>
+      var Username = "";
       function resizeIframe(obj) {
         obj.style.height = obj.contentDocument.documentElement.scrollHeight + 'px';
       }
@@ -17,7 +18,23 @@
         var newSrc = event.relatedTarget.id;
         eventIframe.innerHTML = "<iframe id='iframeEvent' src=" + newSrc + " onload='resizeIframe(this)'></iframe>";    
       }
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
       function Logout() {
+        document.cookie = "Username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         window.location.href="index.html";
       }
       function LoginToLogout() {
@@ -27,16 +44,17 @@
       function Load() {
         var myCarousel = document.getElementById("caroselloEventi");
         myCarousel.addEventListener("slid.bs.carousel", onSlide);
-        var url_str = window.location.href;
-        var url = new URL(url_str);
-        if(url.searchParams.has("name")){
-          var name = url.searchParams.get("name");
+        var name = getCookie("Username");
+        if(name != ""){
+          Username = name;
           LoginToLogout();
           return;
-        }        
+        }   
+        var url_str = window.location.href;
+        var url = new URL(url_str);     
         if(url.searchParams.has("prob")){
-          var prob = url.searchParams.get("prob");
-          switch(expression) {
+          var prob = parseInt(url.searchParams.get("prob"));
+          switch(prob) {
             case 1:
               alert("Nome utente già in uso");
               break;
@@ -136,7 +154,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form target="_blank" action="SignIn.php" class="form-signin" 
+            <form action="SignIn.php" class="form-signin" 
               method="POST" name="formLogin" onsubmit="">
               <input type="text" name="loginUser" class="form-control"
                 placeholder="Inserisci il nome utente" required autofocus/><br>
