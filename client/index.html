@@ -9,22 +9,77 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
     <script>
-      function onSlide(event) {
-        //Eseguito uno slide modifico il campo src clonando il precedente in modo che venga ricaricato
-        var eventEmbed = document.getElementById("embedEvent");
-        var Clone = eventEmbed.cloneNode();
-        var newSrc = event.relatedTarget.id;
-        Clone.setAttribute("src", newSrc);
-        eventEmbed.parentNode.replaceChild(Clone, eventEmbed);
+      var Username = "";
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentDocument.documentElement.scrollHeight + 'px';
       }
-      function EventHandlerCarousel() {
+      function onSlide(event) {
+        var eventIframe = document.getElementById("iframeWrap");
+        var newSrc = event.relatedTarget.id;
+        eventIframe.innerHTML = "<iframe id='iframeEvent' src=" + newSrc + " onload='resizeIframe(this)'></iframe>";    
+      }
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      function Logout() {
+        document.cookie = "Username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.href="index.html";
+      }
+      function LoginToLogout() {
+        var signinBtn = document.getElementById("signin-btn-wrap");
+        signinBtn.innerHTML = '<button type="button" id="signin-btn" class="btn btn-outline-success" onclick="Logout();">Logout</button>';
+      }
+      function Load() {
         var myCarousel = document.getElementById("caroselloEventi");
         myCarousel.addEventListener("slid.bs.carousel", onSlide);
+        var name = getCookie("Username");
+        if(name != ""){
+          Username = name;
+          LoginToLogout();
+          return;
+        }   
+        var url_str = window.location.href;
+        var url = new URL(url_str);     
+        if(url.searchParams.has("prob")){
+          var prob = parseInt(url.searchParams.get("prob"));
+          switch(prob) {
+            case 1:
+              alert("Nome utente già in uso");
+              break;
+            case 2:
+              alert("Email già in uso");
+              break;
+            case 3:
+              alert("Problema non riconosciuto");
+              break;
+            case 4:
+              alert("Nome utente non esistente");
+              break;
+            case 5:
+              alert("Password errata");
+              break;
+            default:
+              alert("Problema non riconosciuto");
+          }
+          return;
+        }       
       }
     </script>
     <title>HomePageProject</title>
   </head>
-  <body onload="EventHandlerCarousel();">
+  <body onload="Load();">
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded"
     >
@@ -56,14 +111,67 @@
               <a class="nav-link" href="#">Contacts</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <button id="signin-btn" class="btn btn-outline-success">
-              Sign in
-            </button>
+
+          <form class="d-flex">  
+            <div id="signin-btn-wrap">       
+              <button type="button" id="signin-btn" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Sign in
+              </button>
+            </div>
           </form>
         </div>
       </div>
     </nav>
+    <div class="modal fade" id="loginModal" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginLabel">Accedi al sito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="Login.php" class="form-signin" 
+              method="POST" name="formLogin" onsubmit="">
+              <input type="text" name="loginUser" class="form-control"
+                  placeholder="Inserisci il nome utente" required autofocus/><br>
+              <input type="password" name="loginPassword" class="form-control"
+                  placeholder="Password" required/><br>
+              <button class="btn btn-lg btn-primary btn-block" name="loginButton"
+                  type="submit">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            Non sei registrato?  <button class="astext" data-bs-target="#signModal" data-bs-toggle="modal" data-bs-dismiss="modal">Registrati ora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="signModal" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginLabel">Registrati al sito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="SignIn.php" class="form-signin" 
+              method="POST" name="formLogin" onsubmit="">
+              <input type="text" name="loginUser" class="form-control"
+                placeholder="Inserisci il nome utente" required autofocus/><br>
+              <input type="email" name="loginEmail" class="form-control"
+                  placeholder="Inserisci l'email" required/><br>
+              <input type="password" name="loginPassword" class="form-control"
+                  placeholder="Password" required/><br>
+              <button class="btn btn-lg btn-primary btn-block" name="signinButton"
+                  type="submit">Registrati</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            Sei già registrato?  <button class="astext" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Accedi qui</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <br />
     <a href="#" class="scrollup" id="TornaSu">
       <img id = 'scrollArrow' src ='assets\img\images\images.png'/>
@@ -72,8 +180,7 @@
       <div class="row">
         <h3>#AdessoBasta</h3>
       </div>
-      <table style="width: 100%;">
-        <td style="width: 75%;">
+      <section id = "carousel-section">
           <div
             id="caroselloEventi"
             class="carousel slide"
@@ -114,11 +221,10 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        </td>
-        <td id="embedWrap">
-          <embed id="embedEvent" src="assets/img/texts/Evento_1.html"/>
-        </td>
-      </table>
+        <div id="iframeWrap">
+          <iframe id="iframeEvent" src="assets/img/texts/Evento_1.html" onload="resizeIframe(this)"></iframe>
+        </div>
+      </section>
       <!-- NEWS SECTION-->
       <!-- Section: Magazine v.2 -->
       <section class="magazine-section my-5">
@@ -382,23 +488,24 @@
       <!-- Section: Magazine v.2 -->
       <!-- END NEWS SECTION-->
       <pre></pre>
-      <div id="linkBox">
+      <section id="linkBox">
         <table>
           <tr>
             <th>I nostri social</th>
             <th>Contattaci</th>
           </tr>
           <tr>
-            <td>Link IG</td>
-            <td>Email</td>
+            <td><a href = "#">Link IG</a></td>
+            <td><a href = "#">Email</a></td>
           </tr>
           <tr>
-            <td>Link Twitter</td>
+            <td><a href = "#">Link Twitter</a></td>
             <td>Telefono</td>
           </tr>
         </table>
-      </div>
+      </section>
     </div>
+
     <script type="text/javascript" src="carousel.js"></script>
   </body>
 </html>

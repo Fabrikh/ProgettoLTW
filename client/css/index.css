@@ -1,6 +1,19 @@
-.carousel {
-  width: 100%;
-  height: 100%;
+body{
+  overflow-x: hidden;
+}
+
+.astext {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  color: blue;
+}
+
+#carousel-section {
+  width: 100vw;
+  margin-left: -7.5vw;
 }
 
 #imgCarousel {
@@ -9,21 +22,17 @@
   object-fit: fill;
 }
 
-#embedWrap {
-  position: relative;
-  padding-bottom: 25%;
-  height: 0;
+#iframeWrap {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 1.5%;
   overflow: hidden;
-  max-width: 100%;
 }
 
-#embedEvent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+#iframeEvent {
   width: 100%;
 }
+
 #TornaSu {
   display: inline;
   position: fixed; /* Fixed/sticky position */
@@ -41,11 +50,17 @@
 
 #linkBox {
   position: absolute;
+  padding-bottom: 2.5%;
   width: 100%;
   right: 0;
   left: 0;
   background-color: blue;
   color: aqua;
+}
+
+#linkBox a {
+    text-decoration: none;
+    color: aqua;
 }
 
 #linkBox td {
