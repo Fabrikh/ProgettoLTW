@@ -60,6 +60,7 @@ body {
   left: 0;
   background-color: blue;
   color: aqua;
+  text-align: center;
 }
 
 #linkBox a {
@@ -67,15 +68,13 @@ body {
   color: aqua;
 }
 
-#linkBox td {
-  width: 25%;
-  padding-left: 10%;
-}
-
-#linkBox th {
-  width: 25%;
-  padding-left: 10%;
-  padding-top: 5%;
+.fa {
+  padding: 2%;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
 }
 
 #signin-btn {
