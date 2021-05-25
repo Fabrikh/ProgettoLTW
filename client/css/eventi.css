@@ -1,0 +1,11 @@
+html, body {
+    overflow: hidden;
+}
+
+b {
+    color:darksalmon;
+}
+#sommario, #luogo {
+    word-wrap: break-word;
+    display: inline;
+}

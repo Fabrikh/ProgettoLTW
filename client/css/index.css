@@ -15,9 +15,13 @@ body {
   color: blue;
 }
 
+.container {
+  margin: 0;
+  padding: 0;
+}
+
 #carousel-section {
   width: 100vw;
-  margin-left: -7.5vw;
 }
 
 #imgCarousel {
@@ -39,11 +43,11 @@ body {
 
 #TornaSu {
   display: inline;
-  position: fixed; /* Fixed/sticky position */
+  position: fixed;
   bottom: 20px;
   right: 0px;
   z-index: 99;
-  cursor: pointer; /* Add a mouse pointer on hover */
+  cursor: pointer;
   transform: translateX(65%);
 }
 
@@ -55,7 +59,7 @@ body {
 #linkBox {
   position: absolute;
   padding-bottom: 2.5%;
-  width: 100%;
+  width: 100vw;
   right: 0;
   left: 0;
   background-color: blue;
