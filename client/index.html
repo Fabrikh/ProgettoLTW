@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="/your-path-to-fontawesome/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
     <script>
       var Username = "";
       function resizeIframe(obj) {
@@ -89,7 +99,15 @@
   </head>
   <body onload="Load();">
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded"
+      class="
+        navbar navbar-expand-lg navbar-light
+        bg-light
+        shadow-sm
+        p-3
+        mb-5
+        bg-white
+        rounded
+      "
     >
       <div class="container-fluid">
         <button
@@ -306,8 +324,84 @@
           ></iframe>
         </div>
       </section>
+      <section class="events-section my-5">
+        <div class="container">
+          <div class="row">
+            <dic class="col">
+              <img
+                src="/ProgettoLTW/client/assets/img/images/iconFaces.png"
+                alt="Nepo"
+                class="center"
+              />
+            </dic>
+            <div class="col">
+              <img
+                src="/ProgettoLTW/client/assets/img/images/logo_nepo.png"
+                alt="Nepo"
+                class="center"
+              />
+            </div>
+          </div>
+          <!-- EVENT CARDS -->
+          <div class="row" style="text-align: center">
+            <div class="col">
+              <div class="card-event">
+                <div class="hvrbox" v-for="x in event">
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    v-bind:data-bs-target="x.modal_link"
+                  >
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      v-bind:id="x.modal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">{{x.text}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      v-bind:src="x.id"
+                      v-bind:alt="x.alt"
+                      class="hvrbox-layer_bottom"
+                    />
+                    <div class="hvrbox-layer_top">
+                      <div class="hvrbox-text">{{x.text}}</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <!-- event 1 -->
+          </div>
+          <div class="col">
+            <!-- event 2 -->
+          </div>
+          <div class="col">
+            <!-- event 1 -->
+          </div>
+        </div>
+      </section>
+
       <!-- NEWS SECTION-->
-      <!-- Section: Magazine v.2 -->
       <section class="magazine-section my-5">
         <!-- Section heading -->
         <h2 class="h1-responsive font-weight-bold text-center my-5">
@@ -349,9 +443,7 @@
                     <i class="fas fa-utensils pr-2"></i>NEPO2k20
                   </h6>
                 </a>
-                <p class="font-weight-bold dark-grey-text">
-                  <i class="fas fa-clock-o pr-2"></i>27/02/2021
-                </p>
+                <p class="font-weight-bold dark-grey-text">27/02/2021</p>
               </div>
 
               <!-- Excerpt -->
@@ -371,9 +463,9 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-lg-6 col-md-12">
+          <div id="colonnavue" class="col-lg-6 col-md-12">
             <!-- Small news -->
-            <div class="single-news mb-4">
+            <div class="single-news mb-4" v-for="x in news">
               <!-- Grid row -->
               <div class="row">
                 <!-- Grid column -->
@@ -381,8 +473,8 @@
                   <!--Image-->
                   <div class="view overlay rounded z-depth-1 mb-4">
                     <img
+                      v-bind:src="x.image"
                       class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
-                      src="./assets/img/images/Bitmap.png"
                       alt="Sample image"
                     />
                     <a>
@@ -398,162 +490,18 @@
                   <span
                     class="badge rounded-pill bg-danger"
                     style="background-color: #ec6c00 !important"
-                    >25/02/2021</span
+                    >{{x.date}}</span
                   >
                   <div class="d-flex justify-content-between">
                     <div class="col-11 text-truncate pl-0 mb-3">
                       <br />
                       <a
-                        href="#!"
+                        v-bind:href="x.ref"
                         class="dark-grey-text"
                         style="color: black; text-decoration: none"
-                        >At vero eos et accusamus et iusto odio dignissimos
-                        ducimus qui blanditiis</a
+                        >{{x.title}}</a
                       >
                     </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
-                  </div>
-                </div>
-                <!-- Grid column -->
-              </div>
-              <!-- Grid row -->
-            </div>
-            <!-- Small news -->
-
-            <!-- Small news -->
-            <div class="single-news mb-4">
-              <!-- Grid row -->
-              <div class="row">
-                <!-- Grid column -->
-                <div class="col-md-3">
-                  <!--Image-->
-                  <div class="view overlay rounded z-depth-1 mb-4">
-                    <img
-                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
-                      src="./assets/img/images/Bitmap.png"
-                      alt="Sample image"
-                    />
-                    <a>
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-9">
-                  <!-- Excerpt -->
-                  <span
-                    class="badge rounded-pill bg-danger"
-                    style="background-color: #ec6c00 !important"
-                    >25/02/2021</span
-                  >
-                  <div class="d-flex justify-content-between">
-                    <div class="col-11 text-truncate pl-0 mb-3">
-                      <br />
-                      <a
-                        href="#!"
-                        class="dark-grey-text"
-                        style="color: black; text-decoration: none"
-                        >Itaque earum rerum hic tenetur a sapiente delectus</a
-                      >
-                    </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
-                  </div>
-                </div>
-                <!-- Grid column -->
-              </div>
-              <!-- Grid row -->
-            </div>
-            <!-- Small news -->
-
-            <!-- Small news -->
-            <div class="single-news mb-4">
-              <!-- Grid row -->
-              <div class="row">
-                <!-- Grid column -->
-                <div class="col-md-3">
-                  <!--Image-->
-                  <div class="view overlay rounded z-depth-1 mb-4">
-                    <img
-                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
-                      src="./assets/img/images/Bitmap.png"
-                      alt="Sample image"
-                    />
-                    <a>
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-9">
-                  <!-- Excerpt -->
-                  <span
-                    class="badge rounded-pill bg-danger"
-                    style="background-color: #ec6c00 !important"
-                    >25/02/2021</span
-                  >
-                  <div class="d-flex justify-content-between">
-                    <div class="col-11 text-truncate pl-0 mb-3">
-                      <br />
-                      <a
-                        href="#!"
-                        class="dark-grey-text"
-                        style="color: black; text-decoration: none"
-                        >Soluta nobis est eligendi optio cumque nihil impedit
-                        quo minus</a
-                      >
-                    </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
-                  </div>
-                </div>
-                <!-- Grid column -->
-              </div>
-              <!-- Grid row -->
-            </div>
-            <!-- Small news -->
-
-            <!-- Small news -->
-            <div class="single-news">
-              <!-- Grid row -->
-              <div class="row">
-                <!-- Grid column -->
-                <div class="col-md-3">
-                  <!--Image-->
-                  <div class="view overlay rounded z-depth-1 mb-md-0 mb-4">
-                    <img
-                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
-                      src="./assets/img/images/Bitmap.png"
-                      alt="Sample image"
-                    />
-                    <a>
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-9">
-                  <!-- Excerpt -->
-                  <span
-                    class="badge rounded-pill bg-danger"
-                    style="background-color: #ec6c00 !important"
-                    >25/02/2021</span
-                  >
-                  <div class="d-flex justify-content-between">
-                    <div class="col-11 text-truncate pl-0 mb-lg-3">
-                      <br />
-                      <a
-                        href="#!"
-                        class="dark-grey-text"
-                        style="color: black; text-decoration: none"
-                        >Duis aute irure dolor in reprehenderit in voluptate</a
-                      >
-                    </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 <!-- Grid column -->
@@ -575,9 +523,7 @@
           <a href="#" class="fa fa-twitter"></a>
           <a href="#" class="fa fa-instagram"></a>
         </div>
-        <div>
-          esempio@gmail.com  -  +39 012 345 6789
-        </div>
+        <div>esempio@gmail.com - +39 012 345 6789</div>
       </section>
     </div>
 

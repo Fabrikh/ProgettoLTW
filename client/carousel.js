@@ -1,12 +1,91 @@
-var app = new Vue ({
-    el : '#innercar',
-    data : {
-        carousel: {
-            First   :{id : "/client/assets/img/texts/Evento_1.html", class : "carousel-item active", src : "assets/img/images/Evento_1.jpg", alt : "Primo"},
+// CAROUSEL
+var app = new Vue({
+  el: "#innercar",
+  data: {
+    carousel: {
+      First: {
+        id: "/client/assets/img/texts/Evento_1.html",
+        class: "carousel-item active",
+        src: "assets/img/images/Evento_1.jpg",
+        alt: "Primo",
+      },
 
-            Second  :{id : "/client/assets/img/texts/Evento_2.html", class : "carousel-item"       , src : "assets/img/images/Evento_2.jpg", alt : "Secondo"},
+      Second: {
+        id: "/client/assets/img/texts/Evento_2.html",
+        class: "carousel-item",
+        src: "assets/img/images/Evento_2.jpg",
+        alt: "Secondo",
+      },
 
-            Third   :{id : "/client/assets/img/texts/Evento_3.html", class : "carousel-item"       , src : "assets/img/images/Evento_3.jpg", alt : "Terzo"}  
-        }
-    }
+      Third: {
+        id: "/client/assets/img/texts/Evento_3.html",
+        class: "carousel-item",
+        src: "assets/img/images/Evento_3.jpg",
+        alt: "Terzo",
+      },
+    },
+  },
+});
+
+//CARDS EVENT
+var app2 = new Vue({
+  el: ".card-event",
+  data: {
+    event: {
+      First: {
+        id: "/ProgettoLTW/client/assets/img/images/Evento_1.jpg",
+        alt: "nepo2020",
+        text: "NEPO 2020",
+        modal: "event-modal1",
+        modal_link: "#event-modal1",
+      },
+      Second: {
+        id: "/ProgettoLTW/client/assets/img/images/Evento_1.jpg",
+        alt: "nepo2020",
+        text: "NEPO 2019",
+        modal: "event-modal2",
+        modal_link: "#event-modal2",
+      },
+      Third: {
+        id: "/ProgettoLTW/client/assets/img/images/Evento_1.jpg",
+        alt: "nepo2020",
+        text: "NEPO 2018",
+        modal: "event-modal3",
+        modal_link: "#event-modal3",
+      },
+    },
+  },
+});
+
+//NEWS EVENT
+var app3 = new Vue({
+  el: "#colonnavue",
+  data: {
+    news: {
+      First: {
+        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
+        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        date: "25/02/2021",
+        title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
+      },
+      Second: {
+        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
+        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        date: "26/02/2021",
+        title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
+      },
+      Third: {
+        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
+        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        date: "27/02/2021",
+        title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
+      },
+      Fourth: {
+        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
+        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        date: "28/02/2021",
+        title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
+      },
+    },
+  },
 });
