@@ -280,7 +280,7 @@
     <a href="#" class="scrollup" id="TornaSu">
       <img id="scrollArrow" src="assets\img\images\images.png" />
     </a>
-    <div class="container">
+    <div class="container-carousel">
       <section id="carousel-section">
         <div
           id="caroselloEventi"
@@ -324,7 +324,9 @@
           ></iframe>
         </div>
       </section>
-      <section class="events-section mb-5" id="eventi">
+    </div>
+    <div class="container">
+      <section id="evSec" class="events-section my-5">
         <div class="container">
           <div class="row">
             <dic class="col">
@@ -370,7 +372,14 @@
                               aria-label="Close"
                             ></button>
                           </div>
-                          <div class="modal-body">{{x.text}}</div>
+                          <div class="modal-body">
+                            {{x.title}}
+                            <div style="text-align: left">
+                              DATA:{{x.date}}<br />
+                              LUOGO: {{x.place}}<br />
+                              SOMMARIO: {{x.summary}}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -380,7 +389,7 @@
                       class="hvrbox-layer_bottom"
                     />
                     <div class="hvrbox-layer_top">
-                      <div class="hvrbox-text">{{x.text}}</div>
+                      <div class="hvrbox-text">{{x.title}}</div>
                     </div>
                   </a>
                 </div>
@@ -402,7 +411,7 @@
       </section>
 
       <!-- NEWS SECTION-->
-      <section id="news" class="magazine-section my-5">
+      <section id="newSec" class="magazine-section my-5">
         <!-- Section heading -->
         <h2 class="h1-responsive font-weight-bold text-center my-5">
           Section title
