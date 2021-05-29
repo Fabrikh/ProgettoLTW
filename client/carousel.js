@@ -4,21 +4,21 @@ var app = new Vue({
   data: {
     carousel: {
       First: {
-        id: "/client/assets/img/texts/Evento_1.html",
+        id: "./assets/img/texts/Evento_1.html",
         class: "carousel-item active",
         src: "assets/img/images/Evento_1.jpg",
         alt: "Primo",
       },
 
       Second: {
-        id: "/client/assets/img/texts/Evento_2.html",
+        id: "./assets/img/texts/Evento_2.html",
         class: "carousel-item",
         src: "assets/img/images/Evento_2.jpg",
         alt: "Secondo",
       },
 
       Third: {
-        id: "/client/assets/img/texts/Evento_3.html",
+        id: "./assets/img/texts/Evento_3.html",
         class: "carousel-item",
         src: "assets/img/images/Evento_3.jpg",
         alt: "Terzo",
@@ -43,7 +43,7 @@ var app2 = new Vue({
         modal_link: "#event-modal1",
       },
       Second: {
-        id: "/ProgettoLTW/client/assets/img/images/Evento_1.jpg",
+        id: "./assets/img/images/Evento_1.jpg",
         alt: "nepo2019",
         title: "NEPO 2019",
         date: "01/01/2019",
@@ -53,7 +53,7 @@ var app2 = new Vue({
         modal_link: "#event-modal2",
       },
       Third: {
-        id: "/ProgettoLTW/client/assets/img/images/Evento_1.jpg",
+        id: "./assets/img/images/Evento_1.jpg",
         alt: "nepo2018",
         title: "NEPO 2018",
         date: "01/01/2018",
@@ -72,26 +72,26 @@ var app3 = new Vue({
   data: {
     news: {
       First: {
-        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
-        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        ref: "./assets/img/texts/TemplateEventi.html",
+        image: "./assets/img/images/sample-img.jpg",
         date: "25/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
       Second: {
-        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
-        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        ref: "./assets/img/texts/Evento_1.html",
+        image: "./assets/img/images/sample-img.jpg",
         date: "26/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
       Third: {
-        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
-        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        ref: "./assets/img/texts/Evento_1.html",
+        image: "./assets/img/images/sample-img.jpg",
         date: "27/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
       Fourth: {
-        ref: "/ProgettoLTW/client/assets/img/texts/Evento_1.html",
-        image: "/ProgettoLTW/client/assets/img/images/images.png",
+        ref: "./assets/img/texts/Evento_1.html",
+        image: "./assets/img/images/sample-img.jpg",
         date: "28/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
