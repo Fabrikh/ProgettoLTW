@@ -33,7 +33,7 @@ var app2 = new Vue({
   data: {
     event: {
       First: {
-        id: "/ProgettoLTW/client/assets/img/images/Evento_1.jpg",
+        id: "./assets/img/images/Evento_1.jpg",
         alt: "nepo2020",
         title: "NEPO 2020",
         date: "01/01/2020",

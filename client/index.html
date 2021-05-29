@@ -22,18 +22,6 @@
     ></script>
     <script>
       var Username = "";
-      function resizeIframe(obj) {
-        obj.style.height =
-          obj.contentDocument.documentElement.scrollHeight + "px";
-      }
-      function onSlide(event) {
-        var eventIframe = document.getElementById("iframeWrap");
-        var newSrc = event.relatedTarget.id;
-        eventIframe.innerHTML =
-          "<iframe id='iframeEvent' src=" +
-          newSrc +
-          " onload='resizeIframe(this)'></iframe>";
-      }
       function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
@@ -60,8 +48,6 @@
           '<button type="button" id="signin-btn" class="btn btn-outline-success" onclick="Logout();">Logout</button>';
       }
       function Load() {
-        var myCarousel = document.getElementById("caroselloEventi");
-        myCarousel.addEventListener("slid.bs.carousel", onSlide);
         var name = getCookie("Username");
         if (name != "") {
           Username = name;
@@ -316,13 +302,6 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div id="iframeWrap">
-          <iframe
-            id="iframeEvent"
-            src="assets/img/texts/Evento_1.html"
-            onload="resizeIframe(this)"
-          ></iframe>
-        </div>
       </section>
     </div>
     <div class="container">
@@ -485,6 +464,7 @@
                       v-bind:src="x.image"
                       class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
                       alt="Sample image"
+                      style="width: 10%; height: 10%"
                     />
                     <a>
                       <div class="mask rgba-white-slight"></div>
