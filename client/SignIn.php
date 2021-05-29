@@ -35,7 +35,7 @@
             }
         }
     }
-    header("Location: index_prova.html?prob=3");
+    header("Location: index.html?prob=3");
     exit;
     ?>
 </body>

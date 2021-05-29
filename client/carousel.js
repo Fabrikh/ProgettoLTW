@@ -4,21 +4,21 @@ var app = new Vue({
   data: {
     carousel: {
       First: {
-        id: "./assets/img/texts/Evento_1.html",
+        id: "./TemplateEventi.html",
         class: "carousel-item active",
         src: "assets/img/images/Evento_1.jpg",
         alt: "Primo",
       },
 
       Second: {
-        id: "./assets/img/texts/Evento_2.html",
+        id: "./Evento_2.html",
         class: "carousel-item",
         src: "assets/img/images/Evento_2.jpg",
         alt: "Secondo",
       },
 
       Third: {
-        id: "./assets/img/texts/Evento_3.html",
+        id: "./Evento_3.html",
         class: "carousel-item",
         src: "assets/img/images/Evento_3.jpg",
         alt: "Terzo",
@@ -72,25 +72,25 @@ var app3 = new Vue({
   data: {
     news: {
       First: {
-        ref: "./assets/img/texts/TemplateEventi.html",
+        ref: "./TemplateEventi.html",
         image: "./assets/img/images/sample-img.jpg",
         date: "25/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
       Second: {
-        ref: "./assets/img/texts/Evento_1.html",
+        ref: "./TemplateEventi.html",
         image: "./assets/img/images/sample-img.jpg",
         date: "26/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
       Third: {
-        ref: "./assets/img/texts/Evento_1.html",
+        ref: "./TemplateEventi.html",
         image: "./assets/img/images/sample-img.jpg",
         date: "27/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
       },
       Fourth: {
-        ref: "./assets/img/texts/Evento_1.html",
+        ref: "./TemplateEventi.html",
         image: "./assets/img/images/sample-img.jpg",
         date: "28/02/2021",
         title: "At vero eos et accusamus et iusto odio dignissimos ducimus",
