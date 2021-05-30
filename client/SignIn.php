@@ -5,7 +5,7 @@
 <body>
     <?php
     $dbconnect = pg_connect("host=localhost port=5432
-                dbname=AdessoBasta user=postgres password=biar")
+                dbname=AdessoBasta user=postgres password=password")
         or die('Could not connect: ' . pg_last_error());
     if (!(isset($_POST['signinButton'])))
         header("Location: index.html");
