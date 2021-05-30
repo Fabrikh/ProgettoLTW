@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   cursor: pointer;
-  color: blue;
+  color: black;
 }
 
 #carousel-section {
@@ -92,7 +92,7 @@ body {
 }
 
 #navbarTogglerDemo03 {
-  margin-left: 25%;
+  margin-left: 30%;
 }
 
 li {
@@ -115,8 +115,6 @@ li a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-  margin-left: 35%;
   width: 50%;
 }
 
@@ -155,7 +153,6 @@ li a:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
-  padding: 15px;
   border-radius: 50%;
   -moz-transition: all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
@@ -188,4 +185,16 @@ li a:hover {
 }
 .hvrbox.active .hvrbox-text_mobile {
   display: block;
+}
+
+.modalfasdfas {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
 }

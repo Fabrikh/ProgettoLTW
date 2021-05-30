@@ -21,3 +21,12 @@ $("$.nav-link").click(function (e) {
     }
   }, 100);
 });
+
+$(document).ready(function () {
+  $("#js-content").load("/about.html");
+
+  $("#js-navigation a").click(function (e) {
+    e.preventDefault();
+    $("#js-content").load(e.target.href);
+  });
+});
