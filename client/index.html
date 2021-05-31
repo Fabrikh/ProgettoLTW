@@ -462,12 +462,14 @@
             >
               <!-- Image -->
               <div class="view overlay rounded z-depth-1-half mb-4">
-                <img
-                  class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
-                  style="height: 100%; width: 100%"
-                  src="./assets/img/images/sample-img.jpg"
-                  alt="Sample image"
-                />
+                <a href="./TemplateEventi.html">
+                  <img
+                    class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                    style="height: 100%; width: 100%"
+                    src="./assets/img/images/sample-img.jpg"
+                    alt="Sample image"
+                  />
+                </a>
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -509,11 +511,13 @@
                 <div class="col-md-3">
                   <!--Image-->
                   <div class="view overlay rounded z-depth-1 mb-4">
-                    <img
-                      v-bind:src="x.image"
-                      class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
-                      alt="Sample image"
-                    />
+                    <a v-bind:href="x.ref">
+                      <img
+                        v-bind:src="x.image"
+                        class="img-fluid shadow-sm p-1 mb-5 bg-white rounded"
+                        alt="Sample image"
+                      />
+                    </a>
                     <a>
                       <div class="mask rgba-white-slight"></div>
                     </a>
