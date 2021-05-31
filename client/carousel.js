@@ -4,21 +4,18 @@ var app = new Vue({
   data: {
     carousel: {
       First: {
-        id: "./TemplateEventi.html",
         class: "carousel-item active",
         src: "assets/img/images/Evento_1.jpg",
         alt: "Primo",
       },
 
       Second: {
-        id: "./Evento_2.html",
         class: "carousel-item",
         src: "assets/img/images/Evento_2.jpg",
         alt: "Secondo",
       },
 
       Third: {
-        id: "./Evento_3.html",
         class: "carousel-item",
         src: "assets/img/images/Evento_3.jpg",
         alt: "Terzo",
