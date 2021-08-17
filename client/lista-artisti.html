@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <title>ARTISTI NEPO 2021</title>
+  </head>
+  <body>
+    <div id="artist" class="container">
+      <div class="row" style="height: 30%; width: 30%">
+        <img src="./assets/img/images/NEPO-2021.png" />
+      </div>
+      <div class="row text-center">
+        <h1 style="color: #9494f7">VIS</h1>
+        <h5>Valutazione Impatto Sociale</h5>
+      </div>
+      <br />
+      <br />
+      <div class="row text-start">
+        <p>
+          <strong>Un grido comune</strong>: 15.000 firme raccolte per la
+          petizione “SOS129” nel 2018.
+        </p>
+        <p>
+          <strong>Un traguardo</strong>: 3 milioni di euro stanziati per la
+          rettifica della “curva della morte”.
+        </p>
+        <p>
+          <strong>La promessa</strong>: avvio dei lavori sulla strada statale
+          entro primavera 2019. Termine previsto: estate 2019.
+        </p>
+        <p>
+            <strong>Il silenzio</strong>: nessun intervento viene realizzato. Inizia lo scontro con la burocrazia. Inizia la lotta con le istituzioni.
+        </p>
+        <p>
+            <strong>La stasi</strong>: 2020. Blocco dell’intervento sulla Trasversale Sarda per la procedura di verifica di assoggettabilità a VIA (Valutazione di Impatto Ambientale) di competenza regionale.
+        </p>
+        <p>
+            <strong>Un traguardo</strong>: a marzo 2021, grazie alle pressioni fatte dall’associazione, viene scongiurato l’impasse VIA. Il procedimento viene sbloccato.
+        </p>
+        <p class="text-center">
+            <strong style="color: #9494f7;">OGGI</strong>
+        </p>
+        <p>
+            <strong>Nuova stasi</strong>: l’ANAS convoca la conferenza dei servizi decisoria. Si attendono i nullaosta, gli assensi e i pareri di tutte le amministrazioni sul progetto definitivo. Siamo in attesa.
+        </p>
+        <p>
+            La mostra collettiva <strong>VIS - Valutazione Impatto Sociale</strong> è l’ennesimo grido dell’Associazione #AdessoBasta, l’ennesima richiesta affinché le istituzioni abbiano chiaro l’urgente obiettivo, non trascurando l’unica fondamentale valutazione, la valutazione prioritaria: il gravoso impatto sociale degli incidenti sulla strada statale Trasversale Sarda che continua a invalidare l’intera comunità.
+        </p>
+        <p>A dare nuova voce al messaggio gli artisti locali che hanno deciso di condividere la battaglia dell’associazione e unirsi unanimemente al grido: adesso basta.</p>
+      </div>
+      <br/>
+      <div class="row text-center">
+        <div class="col">
+          <span><a href="#artisti" style="text-decoration: none; color: #9494f7; font-weight: bolder;">Gli Artisti</a></span>
+        </div>
+        <div class="col">
+          <span><a href="#location" style="text-decoration: none; color: #9494f7; font-weight: bolder;">La Location</a></span>
+        </div>
+        <div class="col">
+          <span><a href="#orari" style="text-decoration: none; color: #9494f7; font-weight: bolder;">Gli Orari</a></span>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <hr/>
+      <br/>
+      <br/>
+      <div class="row">
+          <h1>Gli Artisti</h1>
+        <div id="artisti" class="cl-1" v-for="x in artists">
+          <div
+            class="row shadow-sm"
+            style="padding: 1%; text-align: center; margin: 2%"
+          >
+            <a v-bind:href="x.ref" style="text-decoration: none; color: #9494f7"
+              >{{x.name}} {{x.surname}}</a
+            >
+          </div>
+        </h1>
+      </div>
+      <br />
+      <br />
+      <div id="location" class="row">
+        <h1>La Location</h1>
+        <h3 class="text-center" style="color: #9494f7;">Casa Rossi</h3>
+        <p class="small lead text-center">Via Brusco Onnis, 20</p>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+                src="./assets/img/artifacts/casa_rossi/1.png"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+            />
+        
+            <img
+                src="./assets/img/artifacts/casa_rossi/3b.png"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+            />
+            </div>
+        
+            <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+                src="./assets/img/artifacts/casa_rossi/6.png"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+            />
+        
+            <img
+                src="./assets/img/artifacts/casa_rossi/8.png"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+            />
+            </div>
+        
+            <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+                src="./assets/img/artifacts/casa_rossi/corte.png"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+            />
+        
+            <img
+                src="./assets/img/artifacts/casa_rossi/7.png"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+            />
+            </div>
+        </div>
+        <div class="row">
+            <p>Negli ultimi anni, dalle mura di alcune case del quartiere storico di Santu Predu risuona un inusuale dinamismo, un impulso vitale che irrompe nel quartiere: l’arte contemporanea, la cultura e gli eventi promossi dalle nuove generazioni, sono la risposta alla valorizzazione di un rione che parla ancora delle nostre radici e che non va dimenticato.</p>
+            <p>Al numero 20 di via Brusco Onnis, nel cuore di Santu Predu, Casa Rossi si propone come custode della tradizione. Le sue caratteristiche architettoniche conservano le fattezze delle case padronali di fine Ottocento; i suoi ambienti, fedelmente arredati, emanano un’atmosfera di perpetua autenticità. La casa porta ancora il nome della famiglia che l’ha abitata fino agli anni ’70 del Novecento; oggi si trova sotto la custodia dall’Associazione Su Dechesette de Capidanne, che si impegna a restituire lustro alle sue vecchie fogge e a valorizzarla rendendola fruibile alla collettività.
+                In un costante dialogo con la comunità e con il territorio, Casa Rossi si lascia contaminare da esperienze variegate che si intersecano rispettosamente con la sua storia. È stata ospite di eventi all’insegna della tradizione, come Mastros e Massàjos e percorsi culinari eno-gastronomici della nostra terra, ma ha anche accolto manifestazioni culturalmente impegnate, dando spazio a conferenze e a esposizioni artistiche contemporanee.</p>
+            <p>Oggi raccoglie una nuova sfida ospitando la mostra VIS - Valutazione Impatto Sociale, facendosi portavoce dell’urgente campagna di sensibilizzazione dell’Associazione #AdessoBasta.</p>
+        </div>
+      <div id="orari" class="row">
+        <h1>Gli Orari</h1>
+        <div class="col text-center">
+            <div title="Add to Calendar" class="addeventatc">
+                Save the date
+                <span class="start">08/19/2021 05:30 PM</span>
+                <span class="end">08/30/2021 09:00 PM</span>
+                <span class="timezone">Europe/Rome</span>
+                <span class="title">NEPO 2K21</span>
+                <span class="description">Mostra Artistica NEPO 2k21</span>
+                <span class="location">Casa Rossi, NU</span>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          cazzo boia
+      </div>
+    </div>
+    <script type="text/javascript" src="./lista-artisti.js"></script>
+  </body>
+</html>

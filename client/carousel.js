@@ -29,6 +29,15 @@ var app2 = new Vue({
   el: ".card-event",
   data: {
     event: {
+      Fourth: {
+        id: "./assets/img/images/NEPO-2021.png",
+        alt: "nepo2021",
+        title: "NEPO 2021",
+        date: "Dal 19/08/2021 al 21/08/2021",
+        place: "Mostra artistica a Casa Rossi e Torneo 3v3 in Piazza Italia",
+        summary: "text summary",
+        ref: "./nepo2021.html",
+      },
       First: {
         id: "./assets/img/images/Evento_2.jpg",
         alt: "nepo2020",
@@ -118,3 +127,6 @@ var app3 = new Vue({
     },
   },
 });
+
+var newLink = document.getElementsByClassName("hvrbox");
+newLink.href = "./index_prova.html";

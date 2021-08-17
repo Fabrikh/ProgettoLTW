@@ -10,14 +10,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.js"></script>
     <script type="text/javascript" src="./js/vue.js"></script>
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
     <script>
       var Username = "";
+      var newLink = document.getElementsByClassName("hvrbox");
+      newLink.href = "./index_prova.html";
       function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
@@ -327,7 +326,7 @@
               <div class="card-event">
                 <div class="hvrbox" v-for="x in event" style="margin-right: 6%">
                   <a
-                    href="#"
+                    v-bind:href="x.ref"
                     data-bs-toggle="modal"
                     v-bind:data-bs-target="x.modal_link"
                   >
@@ -580,8 +579,7 @@
         <div>esempio@gmail.com - +39 012 345 6789</div>
       </section>
     </div>
-
-    <script type="text/javascript" src="./carousel.js"></script>
     <script type="text/javascript" src="./scroll.js"></script>
+    <script type="text/javascript" src="./carousel.js"></script>
   </body>
 </html>
