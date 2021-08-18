@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <title>ARTISTI NEPO 2021</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" style="height: 30%; width: 30%">
+        <img src="../assets/img/images/NEPO-2021.png" />
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h1>Daniela Spoto</h1>
+          <h6>(Nuoro, 1986)</h6>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <h3>Biografia</h3>
+        <p class="lead">
+          Nasce a Nuoro nel 1986. Dopo aver studiato Pittura presso l'Accademia
+          di Belle Arti di Sassari, si trasferisce in Germania. La sua cifra
+          stilistica è figlia di una crasi tra la dimensione naturale e
+          l’aspetto fiabesco che in essa vi scorge. Le sue illustrazioni (sia
+          cartacee che digitali) si lasciano influenzare da culture visive
+          straniere, con un costante richiamo alla natura che ha arricchito
+          l’infanzia in terra sarda dell’artista. Dal 2016 vive a Düsseldorf;
+          collabora con case editrici e partecipa a numerose mostre collettive.
+        </p>
+      </div>
+      <br />
+      <div class="row" id="photogallery" style="padding: 10%">
+        <p class="h1" style="color: #9494f7">Kintsugi</p>
+        <small class="text-muted">Illustrazione digitale, 29,7 x 42</small>
+
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../assets/img/artifacts/OPERA 1 SPOTO.png"
+                class="d-block w-100"
+                alt="..."
+                style="object-fit: cover"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+              style="color: black !important"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+              style="color: black !important"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <section id="linkBox">
+      <div>
+        <a
+          href="https://www.facebook.com/search/top?q=adessobasta"
+          class="fa fa-facebook"
+        ></a>
+        <a
+          href="https://www.instagram.com/adessobasta_/"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      <div>esempio@gmail.com - +39 012 345 6789</div>
+    </section>
+    <script type="text/javascript" src="./lista-artisti.js"></script>
+  </body>
+</html>
