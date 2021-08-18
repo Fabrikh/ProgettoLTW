@@ -22,11 +22,6 @@ var vueApp = new Vue({
         name: "Pasquale",
         surname: "Bassu",
       },
-      quin: {
-        ref: "./artist/bro-dan.html",
-        name: "Daniele",
-        surname: "Brotzu",
-      },
       ses: {
         ref: "./artist/del-sal.html",
         name: "Salvatore",
@@ -74,18 +69,8 @@ var vueApp = new Vue({
       },
       quind: {
         ref: "./artist/tic-mad.html",
-        name: "Madga",
+        name: "Magda",
         surname: "Ticca",
-      },
-      sed: {
-        ref: "./artist/gar-ann.html",
-        name: "Anna",
-        surname: "Gardu",
-      },
-      dici: {
-        ref: "./artist/don-tor.html",
-        name: "Tore",
-        surname: "Donato",
       },
       dicio: {
         ref: "./artist/del-fra.html",
